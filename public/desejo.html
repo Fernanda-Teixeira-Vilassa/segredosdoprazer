@@ -64,11 +64,19 @@
 
     <div id="digitalGrid" class="grid grid--3"></div>
 
-    <nav class="section" style="display:flex; justify-content:center; gap:8px; padding-top:24px">
-      <button id="prevPage" class="btn">◀︎ Anterior</button>
-      <span id="pageInfo" class="tag">Página 1</span>
-      <button id="nextPage" class="btn">Próxima ▶︎</button>
-    </nav>
+    <nav class="pagination" aria-label="Navegação de páginas">
+  <ul class="pagination__list">
+    <li>
+      <button id="prevPage" class="btn btn--secondary" disabled>◀︎ Anterior</button>
+    </li>
+    <li>
+      <span id="pageInfo" class="pagination__info">Página 1 de 10</span>
+    </li>
+    <li>
+      <button id="nextPage" class="btn btn--primary">Próxima ▶︎</button>
+    </li>
+  </ul>
+</nav>
   </main>
 
   <!-- Carrinho -->
