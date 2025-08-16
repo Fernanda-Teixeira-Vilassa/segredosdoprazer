@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finalizar Pedido — Segredos do Prazer</title>
+  <link rel="stylesheet" href="./css/styles.css"/>
+  <link rel="icon" type="image/png" href="./logo.png" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <img class="brand-logo" src="./logo.png" alt="Segredos do Prazer logo">
+        <div>
+          <h1 class="title">Segredos do Prazer</h1>
+          <p class="subtitle">Checkout Seguro</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="account.html" class="btn btn--secondary">👤 Minha Conta</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Finalizar Pedido</h2>
+    <p>Confira seus itens antes de prosseguir com o pagamento.</p>
+
+    <!-- Itens do carrinho -->
+    <div id="checkoutItems" class="checkout-list"></div>
+
+    <!-- Resumo -->
+    <div class="checkout-summary">
+      <div class="row">
+        <span>Subtotal:</span>
+        <strong id="checkoutSubtotal">R$ 0,00</strong>
+      </div>
+      <div class="row">
+        <span>Frete:</span>
+        <strong id="checkoutFrete">R$ 0,00</strong>
+      </div>
+      <div class="row total">
+        <span>Total:</span>
+        <strong id="checkoutTotal">R$ 0,00</strong>
+      </div>
+    </div>
+
+    <!-- Formulário (mock) -->
+    <form id="checkoutForm" class="checkout-form">
+      <h3>Dados do Cliente</h3>
+      <label>Nome Completo
+        <input type="text" required/>
+      </label>
+      <label>Email
+        <input type="email" required/>
+      </label>
+      <label>Endereço de Entrega
+        <input type="text" required/>
+      </label>
+      <label>CEP
+        <input type="text" required/>
+      </label>
+      <label>Forma de Pagamento
+        <select required>
+          <option value="">Selecione</option>
+          <option value="pix">PIX</option>
+          <option value="card">Cartão de Crédito</option>
+          <option value="boleto">Boleto Bancário</option>
+        </select>
+      </label>
+      <button type="submit" class="btn btn--primary">Confirmar Pedido</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Segredos do Prazer — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Lê carrinho salvo no localStorage
+    const CART_KEY = 'sp_cart';
+    const cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+
+    const BRL = v => new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(v||0);
+
+    function renderCheckout(){
+      const itemsEl = document.getElementById('checkoutItems');
+      const subtotal = cart.reduce((acc,i)=> acc + i.price * i.qty, 0);
+      const frete = subtotal > 0 ? 20 : 0; // Frete fictício
+      const total = subtotal + frete;
+
+      if(!cart.length){
+        itemsEl.innerHTML = `<p>Seu carrinho está vazio.</p>`;
+        document.getElementById('checkoutSubtotal').textContent = BRL(0);
+        document.getElementById('checkoutFrete').textContent = BRL(0);
+        document.getElementById('checkoutTotal').textContent = BRL(0);
+        return;
+      }
+
+      itemsEl.innerHTML = cart.map(i => `
+        <div class="checkout-item">
+          <div>${i.name} <small>x${i.qty}</small></div>
+          <div>${BRL(i.price * i.qty)}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('checkoutSubtotal').textContent = BRL(subtotal);
+      document.getElementById('checkoutFrete').textContent = BRL(frete);
+      document.getElementById('checkoutTotal').textContent = BRL(total);
+    }
+
+    document.getElementById('checkoutForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      alert("✅ Pedido confirmado! (Fluxo fictício — conecte ao Mercado Pago, Shopify ou WooCommerce)");
+      localStorage.removeItem(CART_KEY);
+      window.location.href = "index.html";
+    });
+
+    document.addEventListener('DOMContentLoaded', renderCheckout);
+  </script>
+
+  <style>
+    .checkout-list { margin:20px 0; border-top:1px solid #ccc; }
+    .checkout-item { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #eee; }
+    .checkout-summary { margin:20px 0; padding:16px; background:#fafafa; border:1px solid #ddd; border-radius:8px; }
+    .checkout-summary .row { display:flex; justify-content:space-between; margin:6px 0; }
+    .checkout-summary .total strong { font-size:1.2em; color:var(--primary); }
+    .checkout-form { display:grid; gap:12px; margin-top:20px; }
+    .checkout-form label { display:flex; flex-direction:column; gap:4px; }
+    .checkout-form input, .checkout-form select { padding:8px; border:1px solid #ccc; border-radius:6px; }
+  </style>
+</body>
+</html>
