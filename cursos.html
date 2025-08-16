@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia do Prazer — Cursos & Workshops</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Cursos online: pompoarismo, massagem sensual, desempenho sexual e técnicas de sedução. Acesso seguro e discreto.">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <div class="brand"><div class="logo">SP</div><div><h1 class="title">Segredos do Prazer</h1><p class="subtitle">Academia do Prazer</p></div></div>
+      <button class="cart-btn" id="openCartBtn">🛒 <span id="cartCount">0</span></button>
+    </div>
+    <nav class="menu container">
+      <a href="index.html#inicio" class="menu__link">Início</a>
+      <a href="boutique.html" class="menu__link" aria-current="page">Boutique do Prazer</a>
+      <a href="desejo.html" class="menu__link">Desejo Proibido</a>
+      <a href="cursos.html" class="menu__link">Academia do Prazer</a>
+      <a href="blog.html" class="menu__link">Segredos Revelados</a>
+      <a href="vip.html" class="menu__link">Quarto Secreto</a>
+      <a href="index.html#contato" class="menu__link">Contato</a>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <div class="section__header">
+      <h2 class="section__title">Academia do Prazer</h2>
+      <p class="section__subtitle">Cursos e workshops para explorar técnicas, conexão e prazer.</p>
+    </div>
+
+    <div class="controls">
+      <input type="search" id="searchInput" class="input" placeholder="Buscar cursos..." />
+      <select id="catSelect" class="select">
+        <option value="all">Todos os temas</option>
+        <option value="pompoarismo">Pompoarismo</option>
+        <option value="massagem">Massagem sensual</option>
+        <option value="desempenho">Desempenho sexual</option>
+        <option value="seducao">Técnicas de sedução</option>
+      </select>
+      <select id="sortSelect" class="select">
+        <option value="pop">Mais populares</option>
+        <option value="price-asc">Menor preço</option>
+        <option value="price-desc">Maior preço</option>
+        <option value="name-asc">A–Z</option>
+      </select>
+    </div>
+
+    <div id="coursesGrid" class="grid grid--3"></div>
+  </main>
+
+  <!-- Carrinho -->
+  <aside id="cartDrawer" class="cart" aria-hidden="true" role="dialog">
+    <div class="cart__header">
+      <h4>Seu Carrinho</h4>
+      <button id="closeCartBtn" class="icon-btn">✕</button>
+    </div>
+    <div id="cartItems" class="cart__items"></div>
+    <div class="cart__footer">
+      <div class="row"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+      <a href="checkout.html" id="checkoutBtn" class="btn btn--primary" style="text-align:center">Finalizar Pedido</a>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="cursos.js"></script>
+</body>
+</html>

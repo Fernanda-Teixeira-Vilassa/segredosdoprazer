@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Segredos do Prazer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Loja erótica com produtos, contos, e-books e cursos. Entrega discreta, conteúdos exclusivos e Área VIP.">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <div class="brand" role="banner">
+        <div class="logo" aria-hidden="true">SP</div>
+        <div>
+          <h1 class="title">Segredos do Prazer</h1>
+          <p class="subtitle">Onde o desejo encontra a liberdade</p>
+        </div>
+      </div>
+      <button class="cart-btn" id="openCartBtn" aria-label="Abrir carrinho">
+        🛒 <span id="cartCount">0</span>
+      </button>
+    </div>
+    <nav class="menu container" aria-label="Menu principal">
+      <a href="index.html#inicio" class="menu__link">Início</a>
+      <a href="boutique.html" class="menu__link" aria-current="page">Boutique do Prazer</a>
+      <a href="desejo.html" class="menu__link">Desejo Proibido</a>
+      <a href="cursos.html" class="menu__link">Academia do Prazer</a>
+      <a href="blog.html" class="menu__link">Segredos Revelados</a>
+      <a href="vip.html" class="menu__link">Quarto Secreto</a>
+      <a href="index.html#contato" class="menu__link">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main id="inicio" class="hero">
+    <div class="container hero__inner">
+      <h2>Descubra. Sinta. Aprenda.</h2>
+      <p>Produtos sensuais, contos irresistíveis, e cursos para elevar o prazer — tudo em um só lugar.</p>
+      <div class="hero__cta">
+        <a href="#boutique" class="btn btn--primary">Explorar Boutique</a>
+        <a href="#desejo" class="btn btn--secondary">Ler Desejo Proibido</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Boutique do Prazer -->
+  <section id="boutique" class="section container">
+    <header class="section__header">
+      <h3 class="section__title">Boutique do Prazer</h3>
+      <p class="section__subtitle">Vibradores, sugadores, masturbadores, cosméticos e lingerie com envio discreto.</p>
+    </header>
+
+    <div class="controls">
+      <input type="search" id="searchInput" class="input" placeholder="Buscar produtos..." aria-label="Buscar produtos" />
+      <select id="filterSelect" class="select" aria-label="Filtrar categoria">
+        <option value="all">Todas as categorias</option>
+        <option value="feminino">Feminino</option>
+        <option value="masculino">Masculino</option>
+        <option value="casal">Casal</option>
+        <option value="acessorios">Acessórios</option>
+      </select>
+      <select id="sortSelect" class="select" aria-label="Ordenar por">
+        <option value="pop">Mais populares</option>
+        <option value="price-asc">Menor preço</option>
+        <option value="price-desc">Maior preço</option>
+        <option value="name-asc">A–Z</option>
+      </select>
+    </div>
+
+    <div id="productsGrid" class="grid"></div>
+  </section>
+
+  <!-- Desejo Proibido (digitais) -->
+  <section id="desejo" class="section section--alt">
+    <div class="container">
+      <header class="section__header">
+        <h3 class="section__title">Desejo Proibido</h3>
+        <p class="section__subtitle">Contos eróticos, romances e e‑books para apimentar a relação.</p>
+      </header>
+      <div id="digitalGrid" class="grid grid--3"></div>
+    </div>
+  </section>
+
+  <!-- Academia do Prazer (cursos) -->
+  <section id="academia" class="section container">
+    <header class="section__header">
+      <h3 class="section__title">Academia do Prazer</h3>
+      <p class="section__subtitle">Cursos e workshops: pompoarismo, massagem sensual, técnicas de sedução.</p>
+    </header>
+    <div id="coursesGrid" class="grid grid--3"></div>
+  </section>
+
+  <!-- Blog / Segredos Revelados -->
+  <section id="blog" class="section section--alt">
+    <div class="container">
+      <header class="section__header">
+        <h3 class="section__title">Segredos Revelados</h3>
+        <p class="section__subtitle">Dicas semanais, resenhas e artigos sobre saúde e fantasia.</p>
+      </header>
+      <div class="blog-cards">
+        <article class="blog-card">
+          <h4>7 jogos para reacender o desejo</h4>
+          <p>Ideias simples para experimentar a dois esta semana — incluindo variações para LDR.</p>
+          <a href="#" class="link">Ler artigo →</a>
+        </article>
+        <article class="blog-card">
+          <h4>Como escolher seu primeiro vibrador</h4>
+          <p>Do bullet ao sugador: o que muda na sensação e como decidir.</p>
+          <a href="#" class="link">Ler artigo →</a>
+        </article>
+        <article class="blog-card">
+          <h4>Massagem sensual: passo a passo</h4>
+          <p>Guia rápido com técnicas de toque, ritmo e respiração.</p>
+          <a href="#" class="link">Ler artigo →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP -->
+  <section id="vip" class="section container vip">
+    <div class="vip__box">
+      <h3>Quarto Secreto</h3>
+      <p>Assinatura mensal com contos exclusivos, vídeos privados e descontos fixos na loja.</p>
+      <a href="#" class="btn btn--primary">Quero Entrar</a>
+    </div>
+  </section>
+
+  <!-- Contato / Footer -->
+  <footer id="contato" class="footer">
+    <div class="container footer__grid">
+      <div>
+        <h4>Segredos do Prazer</h4>
+        <p>Privacidade, qualidade e atendimento humanizado.</p>
+      </div>
+      <form class="newsletter" onsubmit="return false">
+        <label for="emailNews">Receba um guia grátis: 5 ideias para apimentar a relação</label>
+        <div class="newsletter__row">
+          <input id="emailNews" class="input" type="email" placeholder="seu@email.com" />
+          <button class="btn btn--secondary" id="btnNews">Quero</button>
+        </div>
+        <small>Ao enviar, você concorda em receber conteúdos e ofertas. Cancelamento a qualquer momento.</small>
+      </form>
+      <div class="footer__links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Trocas & Devoluções</a>
+        <a href="#">Atendimento</a>
+      </div>
+    </div>
+    <div class="copy">© 2025 Segredos do Prazer — Todos os direitos reservados.</div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside id="cartDrawer" class="cart" aria-hidden="true" aria-labelledby="cartTitle" role="dialog">
+    <div class="cart__header">
+      <h4 id="cartTitle">Seu Carrinho</h4>
+      <button id="closeCartBtn" class="icon-btn" aria-label="Fechar carrinho">✕</button>
+    </div>
+    <div id="cartItems" class="cart__items"></div>
+    <div class="cart__footer">
+      <div class="row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">R$ 0,00</strong>
+      </div>
+      <button id="checkoutBtn" class="btn btn--primary">Finalizar Pedido</button>
+    </div>
+  </aside>
+
+  <div id="overlay" class="overlay" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

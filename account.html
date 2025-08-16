@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Conta — Quarto Secreto</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Área do assinante com conteúdo exclusivo, lançamentos e cupom VIP.">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <div class="brand"><div class="logo">SP</div><div><h1 class="title">Segredos do Prazer</h1><p class="subtitle">Minha Conta</p></div></div>
+      <nav><a class="cart-btn" href="vip.html">Voltar ao VIP</a></nav>
+    </div>
+  </header>
+
+  <main class="section container">
+    <div id="gate" class="vip__box" style="display:none">
+      <h3>Entre para o Quarto Secreto</h3>
+      <p>Você ainda não tem uma assinatura ativa.</p>
+      <a class="btn btn--primary" href="vip.html">Assinar agora</a>
+    </div>
+
+    <section id="member" style="display:none">
+      <header class="section__header">
+        <h2 class="section__title">Bem-vinda ao Quarto Secreto</h2>
+        <p class="section__subtitle">Acesso desde: <span id="vipSince">—</span> • Cupom VIP: <strong id="vipCoupon">—</strong></p>
+      </header>
+
+      <div class="grid grid--3">
+        <div class="card" style="padding:16px">
+          <h3>Conteúdos Exclusivos</h3>
+          <ul id="vipContent" style="color:var(--muted)"></ul>
+        </div>
+        <div class="card" style="padding:16px">
+          <h3>Prévias & Lançamentos</h3>
+          <ul id="vipEarly" style="color:var(--muted)"></ul>
+        </div>
+        <div class="card" style="padding:16px">
+          <h3>Benefícios</h3>
+          <ul style="color:var(--muted)">
+            <li>10% OFF na Boutique (cupom VIP)</li>
+            <li>Conteúdos novos todo mês</li>
+            <li>Suporte prioritário</li>
+          </ul>
+          <div class="card__actions">
+            <button id="btnDesativar" class="btn btn--secondary">Cancelar (demo)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="copy">© 2025 Segredos do Prazer</div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>

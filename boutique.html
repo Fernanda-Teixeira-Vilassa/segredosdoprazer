@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique do Prazer - Loja de Produtos Físicos</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Boutique erótica com vibradores, sugadores, masturbadores, cosméticos e lingerie. Envio discreto.">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <div class="brand"><div class="logo">SP</div><div><h1 class="title">Segredos do Prazer</h1><p class="subtitle">Boutique do Prazer - Loja de Produtos Físicos</p></div></div>
+      <button class="cart-btn" id="openCartBtn">🛒 <span id="cartCount">0</span></button>
+    </div>
+    <nav class="menu container">
+      <a href="index.html#inicio" class="menu__link">Início</a>
+      <a href="boutique.html" class="menu__link" aria-current="page">Boutique do Prazer</a>
+      <a href="desejo.html" class="menu__link">Desejo Proibido</a>
+      <a href="cursos.html" class="menu__link">Academia do Prazer</a>
+      <a href="blog.html" class="menu__link">Segredos Revelados</a>
+      <a href="vip.html" class="menu__link">Quarto Secreto</a>
+      <a href="index.html#contato" class="menu__link">Contato</a>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <div class="section__header">
+      <h2 class="section__title">Boutique do Prazer</h2>
+      <p class="section__subtitle">Seleção curada de toys e acessórios — envio discreto e suporte atencioso.</p>
+    </div>
+
+    <div class="grid" style="grid-template-columns: 260px 1fr; align-items:start">
+      <!-- Sidebar filtros -->
+      <aside class="card" style="padding:16px; position:sticky; top:84px">
+        <h4 style="margin:0 0 10px">Filtros</h4>
+        <div>
+          <label class="tag"><input type="checkbox" class="flt-cat" value="feminino" checked /> Feminino</label>
+          <label class="tag"><input type="checkbox" class="flt-cat" value="masculino" checked /> Masculino</label>
+          <label class="tag"><input type="checkbox" class="flt-cat" value="casal" checked /> Casal</label>
+          <label class="tag"><input type="checkbox" class="flt-cat" value="acessorios" checked /> Acessórios</label>
+        </div>
+
+        <div style="margin-top:14px">
+          <label for="priceMin">Preço mínimo</label>
+          <input id="priceMin" class="input" type="number" placeholder="Ex.: 50" />
+        </div>
+        <div style="margin-top:8px">
+          <label for="priceMax">Preço máximo</label>
+          <input id="priceMax" class="input" type="number" placeholder="Ex.: 300" />
+        </div>
+
+        <div style="margin-top:14px">
+          <label for="sortSelect">Ordenar</label>
+          <select id="sortSelect" class="select">
+            <option value="pop">Mais populares</option>
+            <option value="price-asc">Menor preço</option>
+            <option value="price-desc">Maior preço</option>
+            <option value="name-asc">A–Z</option>
+          </select>
+        </div>
+
+        <div style="margin-top:14px">
+          <label for="searchInput">Buscar</label>
+          <input id="searchInput" class="input" type="search" placeholder="Buscar na boutique..." />
+        </div>
+
+        <div style="margin-top:14px; display:flex; gap:8px">
+          <button id="applyBtn" class="btn btn--primary" type="button">Aplicar</button>
+          <button id="clearBtn" class="btn btn--secondary" type="button">Limpar</button>
+        </div>
+      </aside>
+
+      <!-- Conteúdo -->
+      <section>
+        <div id="resultMeta" class="section__subtitle" style="margin-bottom:10px"></div>
+        <div id="productsGrid" class="grid"></div>
+
+        <nav class="section" style="display:flex; justify-content:center; gap:8px; padding-top:24px">
+          <button id="prevPage" class="btn">◀︎ Anterior</button>
+          <span id="pageInfo" class="tag">Página 1</span>
+          <button id="nextPage" class="btn">Próxima ▶︎</button>
+        </nav>
+      </section>
+    </div>
+  </main>
+
+  <!-- Carrinho -->
+  <aside id="cartDrawer" class="cart" aria-hidden="true" role="dialog">
+    <div class="cart__header">
+      <h4>Seu Carrinho</h4>
+      <button id="closeCartBtn" class="icon-btn">✕</button>
+    </div>
+    <div id="cartItems" class="cart__items"></div>
+    <div class="cart__footer">
+      <div class="row"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+      <a href="checkout.html" id="checkoutBtn" class="btn btn--primary" style="text-align:center">Finalizar Pedido</a>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="boutique.js"></script>
+</body>
+</html>
