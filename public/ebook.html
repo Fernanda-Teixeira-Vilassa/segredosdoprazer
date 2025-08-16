@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Segredos Revelados - E-book / Conto</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <div class="brand"><div class="logo">SP</div><div><h1 class="title">Segredos do Prazer</h1><p class="subtitle">Boutique • Desejo Proibido • Academia • Quarto Secreto</p></div></div>
+      <button class="cart-btn" id="openCartBtn">🛒 <span id="cartCount">0</span></button>
+    </div>
+    <nav class="menu container">
+      <a href="index.html#inicio" class="menu__link">Início</a>
+      <a href="index.html#boutique" class="menu__link">Boutique do Prazer</a>
+      <a href="index.html#desejo" class="menu__link">Desejo Proibido</a>
+      <a href="index.html#academia" class="menu__link">Academia</a>
+      <a href="index.html#blog" class="menu__link">Blog</a>
+      <a href="index.html#vip" class="menu__link">Quarto Secreto</a>
+      <a href="index.html#contato" class="menu__link">Contato</a>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <article class="product-detail" id="detail">
+      <!-- Conteúdo renderizado via JS -->
+    </article>
+  </main>
+
+  <aside id="cartDrawer" class="cart" aria-hidden="true" role="dialog">
+    <div class="cart__header">
+      <h4>Seu Carrinho</h4>
+      <button id="closeCartBtn" class="icon-btn">✕</button>
+    </div>
+    <div id="cartItems" class="cart__items"></div>
+    <div class="cart__footer">
+      <div class="row"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+      <button id="checkoutBtn" class="btn btn--primary">Finalizar Pedido</button>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="page-detail.js"></script>
+</body>
+</html>
