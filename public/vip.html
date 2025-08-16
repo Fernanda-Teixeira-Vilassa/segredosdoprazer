@@ -9,19 +9,22 @@
   <meta name="description" content="Assinatura mensal com contos e vídeos exclusivos, acesso antecipado e desconto fixo na loja.">
 </head>
 <body>
+    <!-- Header / Navbar -->
   <header class="topbar">
     <div class="container nav-wrap">
       <div class="brand">
         <img class="brand-logo" src="./logo.png" alt="Segredos do Prazer logo">
         <div>
-          <h1 class="title">Segredos do Prazer</h1>
-          <p class="subtitle">Onde o desejo encontra a liberdade</p>
+          <h1 class="title">Quarto Secreto</h1>
+          <p class="subtitle">VIP</p>
         </div>
       </div>
+
+      <button class="cart-btn" id="openCartBtn" aria-label="Abrir carrinho">
+        🛒 <span id="cartCount">0</span>
+      </button>
     </div>
-      <div><h1 class="title">Segredos do Prazer</h1><p class="subtitle">Quarto Secreto — VIP</p></div>
-      <a class="cart-btn" href="account.html">Minha Conta</a>
-    <nav class="menu container">
+    <nav class="menu container" aria-label="Menu principal">
       <a href="index.html#inicio" class="menu__link">Início</a>
       <a href="boutique.html" class="menu__link" aria-current="page">Boutique do Prazer</a>
       <a href="desejo.html" class="menu__link">Desejo Proibido</a>
